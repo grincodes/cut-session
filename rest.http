@@ -1,0 +1,79 @@
+POST http://localhost:3500/merchants HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "string",
+  "email": "user@example.com",
+  "cityOfOperation": "string",
+  "username": "string",
+  "password": "pa$$word",
+  "phoneNumber": "+2349090604823",
+  "metadata": {}
+}
+
+###
+
+POST http://localhost:3500/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "melina",
+  "email": "melina65@example.com",
+  "dob": "2019-08-24",
+  "cityOfResidence": "string",
+  "username": "melina",
+  "password": "bemelinaord",
+  "phoneNumber": "+2349090604863",
+  "metadata": {}
+}
+
+###
+POST http://localhost:3500/auth/login HTTP/1.1
+Content-Type: application/json
+ 
+{
+  "username": "melina",
+  "password": "bemelinaord",
+  "accessType": "USER"
+}
+
+###
+GET http://localhost:3500/merchants/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0cmluZyIsImFjY2Vzc1R5cGUiOiJNRVJDSEFOVCIsImlhdCI6MTY3MTQ2MDg0NSwiZXhwIjoxNjcxNDY4MDQ1fQ.qbT6fk_dw7YHS--F5gEGf0GFSvCdsP7oGQQqACI2M3s
+
+###
+GET http://localhost:3500/merchants HTTP/1.1
+
+
+
+###
+POST http://localhost:3500/sessions/ae3f9039-5bcd-4f17-b3fb-f2c4dacc2653 HTTP/1.1
+Content-Type: application/json
+ 
+{
+  "startsAt": "14:10:22Z",
+  "endsAt": "14:55:22Z",
+  "type": "WeekDay"
+}
+
+###
+POST http://localhost:3500/booking HTTP/1.1
+Content-Type: application/json
+ 
+{
+ "sessionId": "812de501-745a-42b0-97eb-455ef9c0ae1e",
+  "date": "2019-08-24",
+  "userId": "1575c9c2-58bd-424a-ad72-c76883d63023",
+  "notes": "note",
+  "title": "i wan book"
+}
+
+###
+GET http://localhost:3500/sessions/ae3f9039-5bcd-4f17-b3fb-f2c4dacc2653 HTTP/1.1
+
+
+###
+GET http://localhost:3500/clients?type=USER&limit=20&offset=1 HTTP/1.1
+
+
+ 
